@@ -21,7 +21,7 @@ while true; do
             echo Opcion_1: Listar el contenido de una carpeta
             echo "Ingrese la ruta absoluta al fichero o carpeta:"
             read ruta
-            ls -l $ruta
+            ls -al $ruta
             sleep 3
             ;;
         2)
@@ -29,7 +29,7 @@ while true; do
             echo Opcion_2: Crear un archivo de texto con una línea de texto
             echo "Ingrese la cadena de texto para almacenar en el archivo:"
             read texto
-            echo $texto > nuevo_archivo.txt
+            echo $texto > ejemplo.txt
             echo "Archivo creado exitosamente."
             sleep 3
             ;;
@@ -48,17 +48,18 @@ while true; do
             echo Opcion_4: Usar el comando awk
             echo "Ejemplo de uso de awk:"
             echo "Contenido del archivo 'ejemplo.txt':"
-            cat ejemplo.txt
-            echo "Mostrar la segunda columna usando awk:"
-            awk '{print $2}' ejemplo.txt
+            cat /home/kali/Documents/Hands4/ejemplo.txt
+            echo "Mostrar la segunda columna usando awk:"   
+	    '{print $2}' ejemplo.txt
             sleep 3
             ;;
         5)
             clear
             echo Opcion_5: Usar el comando grep
             echo "Ejemplo de uso de grep:"
-            echo "Buscar la palabra 'buscar' en el archivo 'ejemplo.txt':"
-            grep "buscar" ejemplo.txt
+            echo "Introduce la palabra a buscar en el archivo 'ejemplo.txt':"
+	    read word
+            grep $word /home/kali/Documents/Hands4/ejemplo.txt
             sleep 3
             ;;
         6)
